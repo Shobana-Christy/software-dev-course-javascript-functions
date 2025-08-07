@@ -79,10 +79,48 @@ reusable functions that solve specific tasks. This activity encourages:
 // 🛠️ Implementation Phase:
 // - Write and refine your three functions as a team
 // - Use return statements and ensure reusability
+function greeting(username, userRole) {
+    return `Name: ${username}, Role: ${userRole}`;
+}
+
+
+function calculateCosts(numberOfAttendees, costPerAttendee) {
+    let total = numberOfAttendees * costPerAttendee;
+    if (numberOfAttendees > 100) {
+        total  *= 0.9;
+    }
+
+    return total;
+}
+
+
+function emailValidator(email) 
+{
+    return email.includes("@") 
+    && email.includes(".") 
+    && !email.includes(" ") 
+    && email.lastIndexOf(".") > email.indexOf("@")
+}
+
 
 // 🧪 Testing Phase:
 // - Each member writes test cases for each function
 // - Use console.log() to test different inputs and edge cases
+console.log('Task One: ');
+console.log(greeting('Alexis', 'Student'));
+
+
+console.log('Task Two: ');
+
+console.log(calculateCosts(90,25));
+console.log(calculateCosts(120,25));
+
+console.log('Task Three: ');
+console.log(emailValidator("mike.denney@cooldude.gg"));
+console.log(emailValidator("mikedenney@com"));
+console.log(emailValidator("mikedenny"));
+console.log(emailValidator(" mike.denny@com"));
+console.log(emailValidator("mike.den ny@com"));
 
 // 🎤 Presentation Phase:
 // - Share your functions with the class
